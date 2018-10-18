@@ -15,6 +15,14 @@ class Timer extends Component {
             currentTime: moment.duration(25, 'minutes'),
             baseTime: moment.duration(25,'minutes')
         };
+        this.baseTimeHandler = this.baseTimeHandler.bind(this);
+    }
+
+    baseTimeHandler(newBaseTime) {
+        this.setState({
+            baseTime: newBaseTime,
+            currentTime: newBaseTime
+        });
     }
 
 
@@ -27,6 +35,7 @@ class Timer extends Component {
                     <TimerButton />
                     <TimerConfig
                         baseTime={this.state.baseTime}
+                        baseTimeHandler={this.baseTimeHandler}
                     />
             </div>
         );
