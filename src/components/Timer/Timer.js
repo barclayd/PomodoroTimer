@@ -18,6 +18,7 @@ class Timer extends Component {
             timerState: TimerStates.NOT_SET,
         };
         this.baseTimeHandler = this.baseTimeHandler.bind(this);
+        this.startTimer = this.startTimer.bind(this);
     }
 
     baseTimeHandler(newBaseTime) {
@@ -27,6 +28,12 @@ class Timer extends Component {
         });
     }
 
+    startTimer() {
+        this.setState({
+            timerState: TimerStates.RUNNING
+        })
+    }
+
 
 
     render() {
@@ -34,7 +41,7 @@ class Timer extends Component {
             <div className="container-fluid">
                     <TimerHeader />
                     <TimerDisplay currentTime={this.state.currentTime}/>
-                    <TimerButton />
+                    <TimerButton startTimer={this.startTimer}/>
                 {
                     (this.state.timerState !== TimerStates.RUNNING)
                         &&
