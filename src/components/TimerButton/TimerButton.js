@@ -16,7 +16,7 @@ class TimerButton extends Component {
                     <button
                         className="btn btn-success center-block"
                         onClick={this.props.startTimer}>
-                        Start
+                        START
                     </button>
                 </div>
             );
@@ -27,6 +27,16 @@ class TimerButton extends Component {
                         className="btn btn-danger center-block"
                         onClick={this.props.stopTimer}>
                         CANCEL
+                    </button>
+                </div>
+            );
+        if(this.props.timerState === TimerState.COMPLETE)
+            return (
+                <div className="row">
+                    <button
+                        className="btn btn-info center-block"
+                        onClick={this.props.stopTimer}>
+                        RESET
                     </button>
                 </div>
             )

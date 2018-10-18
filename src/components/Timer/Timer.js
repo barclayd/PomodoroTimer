@@ -21,6 +21,7 @@ class Timer extends Component {
         this.baseTimeHandler = this.baseTimeHandler.bind(this);
         this.startTimer = this.startTimer.bind(this);
         this.stopTimer = this.stopTimer.bind(this);
+        this.completedTimer = this.completedTimer.bind(this);
         this.countdown = this.countdown.bind(this);
     }
 
@@ -51,6 +52,13 @@ class Timer extends Component {
     }
 
     countdown() {
+        if (this.state.currentTime.get('hours') === 0
+            && this.state.currentTime.get('minutes') === 0
+            && this.state.currentTime.get('seconds') === 0) {
+            this.completedTimer();
+            return;
+        }
+
         const newTime = moment.duration(this.state.currentTime);
         newTime.subtract(1, 'second');
         this.setState({
@@ -58,12 +66,23 @@ class Timer extends Component {
         });
     }
 
+    completedTimer() {
+        if(this.state.timer) {
+            clearInterval(this.state.timer);
+        }
+        this.setState({
+            timerState: TimerStates.COMPLETE,
+            timer: null,
+        });
+    }
 
     render() {
         return (
             <div className="container-fluid">
                     <TimerHeader />
-                    <TimerDisplay currentTime={this.state.currentTime}/>
+                    <TimerDisplay
+                        currentTime={this.state.currentTime}
+                        timerState={this.state.timerState}/>
                     <TimerButton
                         startTimer={this.startTimer}
                         stopTimer={this.stopTimer}
