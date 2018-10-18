@@ -14,3 +14,9 @@ $ git clone https://github.com/barclayd/PomodoroTimer
 $ npm install
 $ npm start
 ```
+### Planned developments for app
+
+* Improve CSS styling using CSS grid
+* Allow for pauses in the time (limited number, perhaps 3 max)
+* Fix bug that allows a negative time to be set
+* Allow user to select random celebratory music based on personal preference in music tastes
