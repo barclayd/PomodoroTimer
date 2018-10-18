@@ -18,7 +18,6 @@ class TimerConfig extends Component {
 
     }
 
-
     render() {
 
         return (

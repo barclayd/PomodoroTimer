@@ -5,6 +5,7 @@ import TimerHeader from '../TimerHeader/TimerHeader';
 import TimerDisplay from "../TimerDisplay/TimerDisplay";
 import TimerButton from "../TimerButton/TimerButtomn";
 import TimerConfig from "../TimerConfig/TimerConfig";
+import * as TimerStates from '../TimerConfig/TimerStates';
 
 class Timer extends Component {
 
@@ -13,7 +14,8 @@ class Timer extends Component {
 
         this.state = {
             currentTime: moment.duration(25, 'minutes'),
-            baseTime: moment.duration(25,'minutes')
+            baseTime: moment.duration(25,'minutes'),
+            timerState: TimerStates.NOT_SET,
         };
         this.baseTimeHandler = this.baseTimeHandler.bind(this);
     }
@@ -33,10 +35,14 @@ class Timer extends Component {
                     <TimerHeader />
                     <TimerDisplay currentTime={this.state.currentTime}/>
                     <TimerButton />
-                    <TimerConfig
+                {
+                    (this.state.timerState !== TimerStates.RUNNING)
+                        &&
+                    (<TimerConfig
                         baseTime={this.state.baseTime}
                         baseTimeHandler={this.baseTimeHandler}
-                    />
+                    />)
+                }
             </div>
         );
     }
