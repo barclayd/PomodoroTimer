@@ -24,7 +24,7 @@ class TimerConfig extends Component {
 
             <div>
                 <div className="card-body">
-                    <h2 className="text-primary">Set Timer</h2>
+                    <h2 className="text-info">Set Timer</h2>
                     <div className="card">
                         <div className="card-body">
                             <div className="col-sm-3">
