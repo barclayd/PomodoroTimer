@@ -11,6 +11,7 @@ Deloyed live via Heroku: https://pomodoro-timers.herokuapp.com/
 
 ```bash
 $ git clone https://github.com/barclayd/PomodoroTimer
+$ cd PomodoroTimer
 $ npm install
 $ npm start
 ```
