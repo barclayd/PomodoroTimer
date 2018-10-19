@@ -14,7 +14,7 @@ class TimerButton extends Component {
             return (
                 <div className="row">
                     <button
-                        className="btn btn-success center-block"
+                        className="btn btn-success card-body"
                         onClick={this.props.startTimer}>
                         START
                     </button>
@@ -24,7 +24,7 @@ class TimerButton extends Component {
             return (
                 <div className="row">
                     <button
-                        className="btn btn-danger center-block"
+                        className="btn btn-danger card-boy"
                         onClick={this.props.stopTimer}>
                         CANCEL
                     </button>
@@ -34,7 +34,7 @@ class TimerButton extends Component {
             return (
                 <div className="row">
                     <button
-                        className="btn btn-info center-block"
+                        className="btn btn-info card-body"
                         onClick={this.props.stopTimer}>
                         RESET
                     </button>
@@ -45,7 +45,7 @@ class TimerButton extends Component {
 
     render() {
         return (
-            <div className="row">
+            <div className="card-body">
                 {this.getButton()}
             </div>
         )

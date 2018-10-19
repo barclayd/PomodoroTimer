@@ -23,10 +23,10 @@ class TimerConfig extends Component {
         return (
 
             <div>
-                <div className="row">
+                <div className="card-body">
                     <h2 className="text-primary">Set Timer</h2>
-                    <div className="row control-row">
-                        <div className="form-group">
+                    <div className="card">
+                        <div className="card-body">
                             <div className="col-sm-3">
                                 <label htmlFor="hours">Hours</label>
                             </div>
@@ -42,8 +42,8 @@ class TimerConfig extends Component {
                         </div>
                     </div>
 
-                    <div className="row control-row">
-                        <div className="form-group">
+                    <div className="card">
+                        <div className="card-body">
                             <div className="col-sm-3">
                                 <label htmlFor="minutes">Minutes</label>
                             </div>
@@ -59,8 +59,8 @@ class TimerConfig extends Component {
                         </div>
                     </div>
 
-                    <div className='row control-row'>
-                        <div className="form-group">
+                    <div className='card'>
+                        <div className="card-body">
                             <div className="col-sm-3">
                                 <label htmlFor="seconds">Seconds</label>
                             </div>

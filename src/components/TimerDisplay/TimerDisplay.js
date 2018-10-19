@@ -8,7 +8,7 @@ const leftPad = (val) => {
 
 const TimerDisplay = (props) => (
     <div>
-    <div className="row center-block">
+    <div className="card-body">
         {
             (props.timerState === TimerState.COMPLETE)
             && <iframe title="mission complete"
@@ -19,7 +19,7 @@ const TimerDisplay = (props) => (
             </iframe>
         }
     </div>
-    <div className="row">
+    <div className="card-body">
         <h2 className="text-center">
             {leftPad(props.currentTime.get('hours'))}:{leftPad(props.currentTime.get('minutes'))}:{leftPad(props.currentTime.get('seconds'))}
             </h2>

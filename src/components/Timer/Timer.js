@@ -78,7 +78,7 @@ class Timer extends Component {
 
     render() {
         return (
-            <div className="container-fluid">
+            <div className="card-body text-md-center">
                     <TimerHeader />
                     <TimerDisplay
                         currentTime={this.state.currentTime}
